@@ -5,17 +5,42 @@ public class CheckingAccount {
 	int balance; //iloœæ pieniêdzy, jak¹ mo¿na wyp³aciæ z konta
 	static int counter; //statyczny licznik iloœci obiektów
 	
-	void printBalance()
-	{
-		int magnitude = (balance < 0) ? -balance : balance;
-		String balanceRep = (balance < 0) ? "(" : "";
-		balanceRep += magnitude;
-		balanceRep += (balance <0) ? ")" : "";
-		System.out.println(balanceRep);
+	public CheckingAccount(String acctOwner, int acctBalance) {
+		owner = acctOwner;
+		balance = acctBalance;
+		counter++;
 	}
-	int deposit(int amount)
+	
+	public CheckingAccount(String acctOwner) {
+		this(acctOwner, 100);
+	}
+	
+	CheckingAccount printBalance()
 	{
-		return amount;
+		if(balance < 0)
+			System.out.println("("+ -balance + ")");
+		else
+		if (balance == 0)
+			System.out.println("zero balance");
+		else
+			System.out.println(balance);
+		return this;
+	}
+//	int deposit(int amount)
+//	{
+//		if(amount <= 0)
+//		{
+//			System.out.println("nie mo¿na obci¹¿yæ konta wartoœci¹ zerow¹ lub ujemn¹");
+//			return balance;
+//		}
+//		balance += amount;
+//		return balance;
+//	}
+	
+	CheckingAccount deposit(int amount)
+	{
+		balance += amount;
+		return this;
 	}
 	int withdraw(int amount)
 	{
@@ -24,7 +49,12 @@ public class CheckingAccount {
 	
 	double sum(double... values)
 	{
-		return 0;
+		int total = 0;
+		for(int i = 0; i < values.length; i++)
+		{
+			total += values[i];
+		}
+		return total;
 	}
 }
  
