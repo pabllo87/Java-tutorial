@@ -1,4 +1,4 @@
-package CheckingAccount;
+package SimpleCode;
 
 class Date
 {

@@ -1,6 +1,6 @@
-package CheckingAccount;
+package SimpleCode;
 
-public class Point {
+public class Point implements Drawable{
 	private int x,y;
 	Point(int x, int y)
 	{
@@ -32,6 +32,11 @@ public class Point {
 	public String toString()
 	{
 		return "(" + x + ", " + y + ")";
+	}
+	
+	@Override public void draw(int color)
+	{
+		System.out.println("Punkt wyrysowany na wspó³rzêdnych " + toString() + " w kolorze: " + color);
 	}
 	
 	public static void main(String[] args)

@@ -1,4 +1,4 @@
-package CheckingAccount;
+package SimpleCode;
 
 public class CheckingAccount {
 	String owner; //imiê i nazwisko w³aœciciela konta
